@@ -1,0 +1,27 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'db/**/*'
+
+Metrics/LineLength:
+  Max: 100
+
+Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/GuardClause:
+  Enabled: false

@@ -1,0 +1,11 @@
+tmp/*
+log/*
+!log/.keep
+.dockerignore
+.git
+.*.sw*
+
+# Don't need any env files in the image
+# environment is set on container startup from external variables
+# .env*
+docker-compose.*

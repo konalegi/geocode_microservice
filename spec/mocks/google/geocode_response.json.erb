@@ -1,0 +1,84 @@
+{
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "40",
+          "short_name": "40",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "улица Минская",
+          "short_name": "ул. Минская",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "<%= @locality %>",
+          "short_name": "<%= @locality %>",
+          "types": [
+            "locality",
+            "political"
+          ]
+        },
+        {
+          "long_name": "город Казань",
+          "short_name": "г. Казань",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Республика Татарстан",
+          "short_name": "Респ. Татарстан",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Россия",
+          "short_name": "RU",
+          "types": [
+            "country",
+            "political"
+          ]
+        },
+        {
+          "long_name": "420140",
+          "short_name": "420140",
+          "types": [
+            "postal_code"
+          ]
+        }
+      ],
+      "formatted_address": "ул. Минская, 40, Казань, Респ. Татарстан, Россия, 420140",
+      "geometry": {
+        "location": {
+          "lat": <%= @lattitude %>,
+          "lng": <%= @longitude %>
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 55.7730699802915,
+            "lng": 49.2390129802915
+          },
+          "southwest": {
+            "lat": 55.7703720197085,
+            "lng": 49.2363150197085
+          }
+        }
+      },
+      "place_id": "ChIJbbxZ1QayXkERSUcwray99Jg",
+      "types": [
+        "street_address"
+      ]
+    }
+  ],
+  "status": "<%= @response_status %>"
+}

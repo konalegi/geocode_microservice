@@ -1,0 +1,67 @@
+version: '3'
+
+networks:
+  bce-network:
+    external: true
+  default:
+
+volumes:
+  app-gems:
+    driver: local
+
+  pg-storage:
+
+services:
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0' -P /tmp/server.pid
+    entrypoint: ''
+    volumes:
+      - app-gems:/usr/local/bundle
+      - .:/var/www/app
+
+    ports:
+      - 3212:3000
+
+    env_file:
+      - .env
+      - .env.secret
+
+    healthcheck:
+      disable: true
+
+    depends_on:
+      - postgis
+      - memcached
+
+    networks:
+      bce-network:
+        aliases:
+          - bce-geocode-web
+      default:
+
+  spec:
+    build: .
+    entrypoint: ''
+    command: 'true'
+    volumes:
+      - app-gems:/usr/local/bundle
+      - .:/var/www/app
+    tty: true
+    env_file:
+      - .env
+      - .env.test
+
+    depends_on:
+      - postgis
+
+    healthcheck:
+      disable: true
+
+  memcached:
+    image: memcached:latest
+
+  postgis:
+    image: mdillon/postgis:9.6
+    volumes:
+      - pg-storage:/var/lib/postgresql/data

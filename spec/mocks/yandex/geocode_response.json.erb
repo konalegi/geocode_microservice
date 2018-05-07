@@ -1,0 +1,101 @@
+{
+  "response": {
+    "GeoObjectCollection": {
+      "metaDataProperty": {
+        "GeocoderResponseMetaData": {
+          "request": "143006, обл Московская, р-н Одинцовский, г Одинцово, ул Маковского, д. 10, кв. 1000",
+          "found": "<%= @found_count %>",
+          "results": "10"
+        }
+      },
+      "featureMember": [
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "kind": "house",
+                "text": "Россия, Московская область, Одинцово, улица Маковского, 10",
+                "precision": "number",
+                "Address": {
+                  "country_code": "RU",
+                  "postal_code": "143006",
+                  "formatted": "Московская область, Одинцово, улица Маковского, 10",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Россия"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Центральный федеральный округ"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Московская область"
+                    },
+                    {
+                      "kind": "area",
+                      "name": "Одинцовский район"
+                    },
+                    {
+                      "kind": "area",
+                      "name": "городское поселение Одинцово"
+                    },
+                    {
+                      "kind": "locality",
+                      "name": "<%= @locality %>"
+                    },
+                    {
+                      "kind": "street",
+                      "name": "улица Маковского"
+                    },
+                    {
+                      "kind": "house",
+                      "name": "10"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Московская область, Одинцово, улица Маковского, 10",
+                    "CountryNameCode": "RU",
+                    "CountryName": "Россия",
+                    "AdministrativeArea": {
+                      "AdministrativeAreaName": "Московская область",
+                      "SubAdministrativeArea": {
+                        "SubAdministrativeAreaName": "Одинцовский район",
+                        "Locality": {
+                          "LocalityName": "Одинцово",
+                          "Thoroughfare": {
+                            "ThoroughfareName": "улица Маковского",
+                            "Premise": {
+                              "PremiseNumber": "10",
+                              "PostalCode": {
+                                "PostalCodeNumber": "143006"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Одинцово, Московская область, Россия",
+            "name": "улица Маковского, 10",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "37.276985 55.666264",
+                "upperCorner": "37.285196 55.670904"
+              }
+            },
+            "Point": {
+              "pos": "<%= @longitude %>, <%= @lattitude %>"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  test_container:
+    image: ${APP_NAME}
+    command: 'true'
+    entrypoint: ''
+
+    environment:
+      RAILS_ENV: test
+
+    depends_on:
+      - postgis
+
+  postgis:
+    image: mdillon/postgis:9.6
