@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Available functions:
+- Geocode using multiiple adapter
+  Supported adapters
+    * Google
+    * Yandex
+    * DaData
 
-Things you may want to cover:
+- Identify distance of the route outside of the city with predefined city boundaries.
 
-* Ruby version
+# Prepare database
+`docker-compose run --rm web rails db:create db:migrate`
 
-* System dependencies
+# Import city boundaries  
+  `docker-compose run --rm web rails city_boundaries:import`  
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# To start http endpoint.
+`docker-compose up -d`
