@@ -15,8 +15,8 @@ describe 'GET /api/distance/from_city', type: :request do
     let(:distance) { rand(100) }
 
     before do
-      expect(Route::InRegion).to receive(:distance_from_city).
-        with(city_name: city_name, dst: dst).and_return(distance)
+      expect(Route::InRegion).to receive(:distance_from_city)
+        .with(city_name: city_name, dst: dst).and_return(distance)
 
       post(url, params: params)
     end
@@ -31,8 +31,8 @@ describe 'GET /api/distance/from_city', type: :request do
     let(:error_str) { SecureRandom.hex }
 
     before do
-      expect(Route::InRegion).to receive(:distance_from_city).
-        and_raise(Route::InRegion::BaseError, error_str)
+      expect(Route::InRegion).to receive(:distance_from_city)
+        .and_raise(Route::InRegion::BaseError, error_str)
 
       post(url, params: params)
     end

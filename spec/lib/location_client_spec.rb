@@ -138,6 +138,5 @@ describe LocationClient do
         expect(da_data_request).not_to have_been_made
       end
     end
-
   end
 end

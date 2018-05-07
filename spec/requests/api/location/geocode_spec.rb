@@ -32,8 +32,8 @@ describe 'GET /api/geocode', type: :request do
       let(:params) { super().merge(adapter_name: adapter_name) }
 
       let(:mock_request) do
-        expect(LocationClient).to receive(:geocode).
-          with(address: address, adapter_name: adapter_name).and_return(result)
+        expect(LocationClient).to receive(:geocode)
+          .with(address: address, adapter_name: adapter_name).and_return(result)
       end
 
       specify do

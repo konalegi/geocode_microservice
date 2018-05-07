@@ -16,13 +16,13 @@ module Api
 
     def distance_from_city
       distance = Route::InRegion.distance_from_city(distance_from_city_params)
-      render json: { distance: distance}
+      render json: { distance: distance }
     end
 
     private
 
     def distance_from_city_params
-      params.permit(:city_name, dst: [:lat, :lon]).to_h.deep_symbolize_keys
+      params.permit(:city_name, dst: %i[lat lon]).to_h.deep_symbolize_keys
     end
 
     def render_422_error(ex)
